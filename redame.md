@@ -12,6 +12,41 @@ En JavaScript, puedes reproducir videos utilizando el elemento `<video>` de HTML
 - **`muted`**: Activa o desactiva el silencio.
 - **`playbackRate`**: Controla la velocidad de reproducción (1.0 es la velocidad normal).
 
+### Ejemplo de uso
+
+```javascript
+<video id="miVideo" width="400" controls>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+</video>
+<br>
+<button onclick="reproducir()">▶ Reproducir</button>
+<button onclick="pausar()">⏸ Pausar</button>
+<button onclick="silenciar()">🔇 Silenciar</button>
+<button onclick="adelantar()">⏩ Adelantar 5s</button>
+
+<script>
+    let video = document.getElementById("miVideo");
+
+    function reproducir() {
+        video.play();
+    }
+
+    function pausar() {
+        video.pause();
+    }
+
+    function silenciar() {
+        video.muted = !video.muted;
+    }
+
+    function adelantar() {
+        video.currentTime += 5;
+    }
+</script>
+
+```
+
 ## Eventos relacionados con video
 
 Puedes ejecutar acciones cuando el video cambia de estado:
