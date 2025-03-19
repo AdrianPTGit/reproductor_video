@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configuración del documento -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsiva -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos externa -->
+    <title>Reproductor</title> <!-- Título de la página -->
+</head>
+<body>
+    <!-- Contenedor principal del reproductor de video -->
+    <div id="video-container">
+        <h1>Reproductor de Video</h1> <!-- Título principal -->
+        
+        <!-- Elemento de video con controles -->
+        <video id="video" controls>
+            <source src="video/sample-15s.mp4" type="video/mp4"> <!-- Fuente del video -->
+            Tu navegador no soporta el elemento de video. <!-- Mensaje en caso de incompatibilidad -->
+        </video>
+        
+        <!-- Controles del video -->
+        <div class="controls">
+            <button onclick="playPause()" id="btn_pause_play">Play/Pause</button> <!-- Botón de reproducción/pausa -->
+            <button onclick="stopVideo()" id="btn_stop">Stop</button> <!-- Botón de detener -->
+        </div>
+        
+        <!-- Control de volumen -->
+        <div class="volume">
+            <input type="range" id="volume" min="0" max="1" step="0.1" onchange="setVolume()"> <!-- Barra de volumen -->
+        </div>
+    </div>
+    
+    <!-- Enlace al script de JavaScript -->
+    <script src="js/reproductor.js"></script>
+</body>
+</html>
